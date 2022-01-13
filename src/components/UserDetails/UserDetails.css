@@ -1,0 +1,20 @@
+.wrap-details {
+    padding: 10px;
+    margin-left: 100px;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.details-btn {
+    height: 30px;
+    background-color: #282c34;
+    border: none;
+    color: aliceblue;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.details-btn:hover {
+    background-color: aliceblue;
+    color: #282c34;
+}
