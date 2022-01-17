@@ -13,21 +13,21 @@ export default function Form({update}) {
         register, handleSubmit, watch, formState: {errors}
     } = useForm({resolver: joiResolver(CarValidator)});
 
-    const submit = async (car) => {
-        try {
-            const newCar = await carService.create(car);
-            update(newCar);
-            // console.log(newCar)
-        } catch (errors) {
-            setFormError(errors.response.data)
-        }
-    }
-
-    // const submit = (car) => {
-    //     carService.create(car).then(value => console.log(value)).catch(errors => {
-    //         setFormError(errors.response.data);
-    //     })
+    // const submit = async (car) => {
+    //     try {
+    //         const newCar = await carService.create(car);
+    //         update(newCar);
+    //         // console.log(newCar)
+    //     } catch (errors) {
+    //         setFormError(errors.response.data)
+    //     }
     // }
+
+    const submit = (car) => {
+        carService.create(car).then(value => update(value)).catch(errors => {
+            setFormError(errors.response.data);
+        })
+    }
 
     return (
         <div>

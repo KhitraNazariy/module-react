@@ -11,10 +11,14 @@ export default function Cars({trigger}) {
         carService.getAll().then(value => setCars([...value]));
     },[trigger]);
 
+    const carDelete = (id) => {
+        carService.deleteById(id)
+    }
+
     return (
         <div>
             {
-                cars.map(car => <Car key={car.id} car={car}/>)
+                cars.map(car => <Car key={car.id} car={car} carDelete={carDelete}/>)
             }
         </div>
     );
