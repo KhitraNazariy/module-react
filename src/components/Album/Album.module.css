@@ -1,0 +1,22 @@
+.wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    border: none;
+    background-color: #003850;
+    color: #F59170;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    font-weight: bolder;
+    transition: .5s;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: #F59170;
+    color: #003850;
+}

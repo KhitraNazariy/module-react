@@ -1,0 +1,20 @@
+.header {
+    background-color: #003850;
+    min-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.header a {
+    color: #F59170;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.header a[class = 'active'] {
+    color: #00C3CB;
+    text-decoration: underline;
+}
