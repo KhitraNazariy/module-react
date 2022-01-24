@@ -1,24 +1,19 @@
 import {useEffect, useState} from "react";
-
 import {carService} from "../../services/car.service";
 import Car from "../Car/Car";
 
-export default function Cars({trigger}) {
+export default function Cars({trigger, update, setCarForUpdate}) {
 
     const [cars, setCars] = useState([]);
 
-    useEffect(()=> {
+    useEffect(() => {
         carService.getAll().then(value => setCars([...value]));
     },[trigger]);
-
-    const carDelete = (id) => {
-        carService.deleteById(id)
-    }
 
     return (
         <div>
             {
-                cars.map(car => <Car key={car.id} car={car} carDelete={carDelete}/>)
+                cars.map(car => <Car key={car.id} car={car} update={update} setCarForUpdate={setCarForUpdate}/>)
             }
         </div>
     );

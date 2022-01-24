@@ -1,19 +1,21 @@
-import Form from "./components/Form/Form";
-import Cars from "./components/Cars/Cars";
 import {useState} from "react";
 
-export default function App() {
-    
-    const [trigger, setTrigger] = useState(null);
+import Form from "./components/Form/Form";
+import Cars from "./components/Cars/Cars";
 
-    const update = (data) => {
-        setTrigger(data);
+export default function App() {
+
+    const [trigger, setTrigger] = useState(null);
+    const [carForUpdate, setCarForUpdate] = useState({});
+
+    const update = car => {
+        setTrigger(car)
     }
-    
+
     return (
         <div>
-            <Form update={update}/>
-            <Cars trigger={trigger}/>
+            <Form update={update} carForUpdate={carForUpdate}/>
+            <Cars trigger={trigger} update={update} setCarForUpdate={setCarForUpdate}/>
         </div>
     );
 }
