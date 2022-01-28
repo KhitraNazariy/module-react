@@ -1,11 +1,11 @@
-export default function Cats({cat}) {
+export default function Cats({cat, dispatch}) {
 
-    const {name} = cat
+    const {name, id} = cat
 
     return (
         <div>
             {name}
-            <button>delete</button>
+            <button onClick={() => dispatch({type: 'delete', target: 'cat', payload: {id}})}>delete</button>
         </div>
     );
 }
