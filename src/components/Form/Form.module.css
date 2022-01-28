@@ -1,0 +1,10 @@
+.wrap {
+    display: flex;
+    column-gap: 100px;
+    margin-bottom: 20px;
+}
+
+.wrapComponents {
+    display: flex;
+    justify-content: space-around;
+}
