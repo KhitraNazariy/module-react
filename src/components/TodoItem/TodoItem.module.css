@@ -1,0 +1,11 @@
+.wrap {
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.text{
+    text-decoration: line-through;
+}
